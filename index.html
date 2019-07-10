@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="app.js"></script>
 </head>
 
 <body>
-    <h1>Hello World</h1>
+    <h1>Low cohision and tight coupling</h1>
+    <div ng-controller="myController">
+        <input type="text" ng-model="name" ng-keyup="keyup();" />
+        <p>Total numeric value of person's name: {{totalValue}}</p>
+    </div>
 </body>
 
 </html>
