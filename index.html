@@ -8,13 +8,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="app.js"></script>
+    <style>
+        img {
+            width: 55px;
+            height: 55px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Low cohision and tight coupling</h1>
     <div ng-controller="myController">
-        <input type="text" ng-model="name" ng-keyup="keyup();" />
+        <input type="text" ng-model="name" ng-keyup="keyup();" ng-blur="blur();" />
         <p>Total numeric value of person's name: {{totalValue}}</p>
+    </div>
+    <br/>
+    <h1>Flip images</h1>
+    <div ng-controller="myController2">
+        <button ng-click="flip();">{{state}}</button>
+        <br/><br/>
+        <img ng-src="images/{{state}}.png" alt="Not Found Image" />
     </div>
 </body>
 
