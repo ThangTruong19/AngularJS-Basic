@@ -60,6 +60,45 @@
                 }
 
             }])
+            .controller('myController5', ['$scope', function($scope) {
+                $scope.shoppingList1 = ["Milk", "Donuts", "Cookies", "Chocolate", "Peanut Butter", "Pepto Bismol",
+                    "Pepto Bismol(Chocolate flavor)", "Pepto Bismol(Cookie flavor)"
+                ];
+
+                $scope.shoppingList2 = [{
+                    name: "Milk",
+                    quantity: 2
+                }, {
+                    name: "Donuts",
+                    quantity: 200
+                }, {
+                    name: "Cookie",
+                    quantity: 300
+                }, {
+                    name: "Chocolate",
+                    quantity: 5
+                }];
+
+                $scope.addNewItemList1 = function() {
+                    $scope.shoppingList1.push($scope.newItemNameList1);
+                }
+
+                $scope.addNewItemList2 = function() {
+                    var newItem = {
+                        name: $scope.newItemNameList2,
+                        quantity: $scope.newItemQuantityList2
+                    };
+                    $scope.shoppingList2.push(newItem);
+                }
+
+                // function searchItem(value) {
+                //     return (value.indexOf($scope.searchKey) !== -1);
+                // }
+
+                // $scope.search = function() {
+                //     $scope.searchResult = $scope.shoppingList1.filter(searchItem);
+                // }
+            }])
             .filter('append', appendString)
             .filter('changeText', changeText);
 

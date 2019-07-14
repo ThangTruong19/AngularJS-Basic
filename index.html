@@ -23,6 +23,7 @@
         <p>Total numeric value of person's name: {{totalValue}}</p>
     </div>
     <br/>
+
     <h1>Flip images</h1>
     <div ng-controller="myController2">
         <button ng-click="flip();">{{state}}</button>
@@ -30,6 +31,7 @@
         <img ng-src="images/{{state}}.png" alt="Not Found Image" />
     </div>
     <br/>
+
     <h1>Filter</h1>
     <div ng-controller="myController3">
         <p>{{text}}</p>
@@ -37,6 +39,7 @@
         <p>{{text2 | append}} </p>
         <p>Change text: {{text2 | changeText: "anonymous" : "Thang" }}</p>
     </div>
+
     <h1>Digest Cycle</h1>
     <div ng-controller="myController4">
         <button ng-click="showWatcherCount();">Show Watcher Count</button>
@@ -47,6 +50,31 @@
         <p>1 time watcher: <span>{{::watcher3}}</span></p>
     </div>
 
+    <h1>NG-REPEAT</h1>
+    <div ng-controller="myController5">
+        <h2>Shopping List 1:</h2>
+        <ul>
+            <li ng-repeat="item in shoppingList1">{{item}}</li>
+        </ul>
+        <input type="text" placeholder="New item name" ng-model="newItemNameList1">
+        <button ng-click="addNewItemList1();">Add Item</button>
+        <h2>Shopping List 2:</h2>
+        <ul>
+            <li ng-repeat="item in shoppingList2">{{$index+1}} .Name: {{item.name}}, quantity: {{item.quantity}}</li>
+        </ul>
+        <input type="text" placeholder="New Item Name" ng-model="newItemNameList2">
+        <input type="text" placeholder="New Item quantity" ng-model="newItemQuantityList2">
+        <button ng-click="addNewItemList2();">Add Item</button>
+        <h2>Filtered Ng-repeat</h2>
+        <ul>
+            <li ng-repeat="item in shoppingList1">{{item}}</li>
+        </ul>
+        <input ng-keyup="search();" type="text" ng-model="searchKey">
+        <h3>Search Result</h3>
+        <ul>
+            <li ng-repeat="item in shoppingList1 | filter: searchKey">{{item}}</li>
+        </ul>
+    </div>
 </body>
 
 </html>
