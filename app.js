@@ -49,6 +49,16 @@
                     $scope.watcher2 += 1;
                     $scope.watcher3 = 1;
                 }
+                $scope.callTimeout = function() {
+                    console.log("Clicked button!!");
+                    setTimeout(function() {
+                        $scope.$apply(function() {
+                            console.log("Enter setTimeout");
+                            $scope.watcher1 += 1;
+                        })
+                    }, 2000)
+                }
+
             }])
             .filter('append', appendString)
             .filter('changeText', changeText);
