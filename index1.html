@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp1">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <h1>Controller As Syntax</h1>
+    <div ng-controller="ParentController1">
+        <div ng-controller="ChildController1">
+        </div>
+    </div>
+
+    <div ng-controller="ParentController2 as parent1">
+        Parent Value: {{parent1.value}}
+        <div ng-controller="ChildController2 as child1">
+            Child Value: {{child1.value}}
+        </div>
+    </div>
+</body>
+
+</html>
